@@ -1,0 +1,27 @@
+#Software Design Document
+
+1.Introduction:
+The Localization class is designed to facilitate the localization of user interface components properties such as "Caption", "Text", "Items", "Lines", and "Hint" in a  application. It provides methods to read localization data from files, apply localized values to components, and handle language selection changes.
+
+2.Class Details:
+##Class Name:TMyPage
+##Base Class:TForm(VCL framework)
+##Header File:MyPage.h
+
+###Public Members:
+●Constructor: Reads localization data from files, and sets up event handlers.
+●ComboBoxToSelectLangChange: Handles the change event of the language selection combo box.
+
+###Private Members:
+●LocalizeComponentCaptionAndText:     Localizes the "Caption" and "Text" properties of components based on selected language.
+●LocalizeComponentItemsAndLines:      Localizes the "Items" and "Lines" properties of components based on selected language.
+●LocalizeHint:                        Localizes the "Hint" property of components based on selected language.
+●ReadTranslationData:                 Reads localization data from files and populates the corresponding data structures.
+●fixNewline:                          Replaces"\\n" with actual newline characters ("\n") in a given string.
+
+3.Conclusion:
+The Localization provides a convenient and organized way to implement multi-language support for user interface components in a C++ Builder application. 
+By centralizing localization logic, it simplifies the process of managing and applying localized data to various properties of components. 
+
+Note:With the following design,localization can be performed only to the components of this classs since the localization functions are private.
+In order to have access to other forms ,its recommended to create a global fucntion fo localization.
